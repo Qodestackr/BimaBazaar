@@ -1,128 +1,85 @@
-<!-- ## Current Sprint (2 Weeks)
-
-### User Authentication & Management
-
-- [ ] Implement user registration flow
-- [ ] Build profile management interface
-- [ ] Setup document upload system
-- [ ] Create authentication middleware
-
-### Policy Discovery & Comparison
-
-- [ ] Build policy listing interface
-- [ ] Implement comparison tool
-- [ ] Create premium calculator
-- [ ] Add filtering and sorting functionality
-
-### Quote Generation
-
-- [ ] Design quote generation workflow
-- [ ] Implement form validation
-- [ ] Setup PDF generation for quotes
-- [ ] Add quote saving functionality
-
-### Foundation Work
-
-- [ ] Setup CI/CD pipeline
-- [ ] Implement logging system
-- [ ] Create API documentation
-- [ ] Setup monitoring tools
-
-## Backlog (Future Sprints)
-
-### Insurance Company Integration
-
-- Policy data synchronization
-- Automated underwriting
-- Real-time premium updates
-
-### Claims Management
-
-- Digital claim submission
-- Status tracking
-- Document management
-
-### Analytics & Reporting
-
-- User behavior tracking
-- Conversion analytics
-- Performance dashboards -->
+# BimaBazaar Matatu Sprint Plan
 
 ## Current Sprint (2 Weeks)
 
-### 🔐 User Authentication & Management
+### 🚗 SACCO & Fleet Onboarding
 
-- [ ] **Launch User Registration Flow**  
-       Build a frictionless signup—integrate PostHog for feature flagging to test flows.
-- [ ] **Profile Management Interface**  
-       Deliver an intuitive, mobile-first UI for managing profiles.
-- [ ] **Document Upload System**  
-       Enable secure uploads; log errors in Sentry for real-time visibility.
-- [ ] **Authentication Middleware**  
-       Harden endpoints with token validation and audit trails.
+- [ ] **Bulk Vehicle Registration**  
+       CSV upload for fleet onboarding; PostHog tracking for upload success rates
+- [ ] **SACCO Dashboard**  
+       Mobile-first admin panel for fleet management
+- [ ] **M-Pesa Batch Payments**  
+       Integrate bulk premium collection; log transactions in Sentry
+- [ ] **Document Management**  
+       Secure storage for vehicle logs and PSV licenses
 
-### 🏠 Policy Discovery & Comparison
+### 📱 Driver Experience
 
-- [ ] **Policy Listing Interface**  
-       Design a responsive list view with filtering and sorting; leverage OpenReplay to monitor user sessions.
-- [ ] **Comparison Tool**  
-       Create side-by-side policy comparisons—real-time updates via Airbyte for seamless data sync.
-- [ ] **Premium Calculator**  
-       Integrate smart calculations and ensure precise estimates.
-- [ ] **Enhanced Filtering & Sorting**  
-       Let users drill down options with ease and see what matters most.
+- [ ] **USSD Integration (\*483#)**  
+       Quick quote generation without internet
+- [ ] **WhatsApp Policy Distribution**  
+       Instant policy delivery and storage
+- [ ] **Accident Photo Upload**  
+       Build MVP for photo-based claims assessment
+- [ ] **Swahili Language Support**  
+       Localize core flows for drivers
 
-### 💬 Quote Generation
+### ⚡ Claims Acceleration
 
-- [ ] **Design Quote Generation Workflow**  
-       Map out a user-friendly, step-by-step process for getting quotes.
-- [ ] **Form Validation**  
-       Use real-time validation and capture errors in Sentry.
-- [ ] **PDF Generation for Quotes**  
-       Automate dynamic PDF creation—no more manual downloads.
-- [ ] **Quote Saving Functionality**  
-       Ensure users can save and revisit quotes; track interactions with PostHog.
+- [ ] **24-Hour Claims Workflow**  
+       Design fast-track process for rapid settlements
+- [ ] **Garage Network Integration**  
+       Direct towing and repair authorization
+- [ ] **Real-time Status Updates**  
+       SMS/WhatsApp notifications for claims progress
+- [ ] **Claims Document Upload**  
+       Mobile-optimized photo capture with compression
 
-### 🏗 Foundation Work
+### 🏗 Core Infrastructure
 
-- [ ] **CI/CD Pipeline Setup**  
-       Automate deployments and tests for faster iteration cycles.
-- [ ] **Logging System Implementation**  
-       Standardize logs; integrate with Sentry for error monitoring.
+- [ ] **Error Monitoring**  
+       Sentry integration focusing on payment flows
+- [ ] **Performance Analytics**  
+       OpenReplay for session monitoring
 - [ ] **API Documentation**  
-       Create clear, interactive docs (think Swagger) for developer ease.
-- [ ] **Monitoring Tools Setup**  
-       Hook up OpenReplay and PostHog to watch user behaviors and app health in real time.
+       Focus on SACCO integration endpoints
+- [ ] **Security Hardening**  
+       Penetration testing for SACCO dashboards
 
 ---
 
-## Backlog (Future Sprints)
+## Backlog (Next Sprints)
 
-### 🏦 Insurance Company Integration
+### 🔄 SACCO Integration Expansion
 
-- **Policy Data Synchronization** – Automate data flows with Airbyte.
-- **Automated Underwriting** – Build algorithms for risk assessment.
-- **Real-Time Premium Updates** – Enable instant premium recalculations.
+- Direct API access for large SACCOs
+- Fleet compliance monitoring
+- Automated renewal workflows
 
-### 🚑 Claims Management
+### 📊 Claims Intelligence
 
-- **Digital Claim Submission** – Create a streamlined submission process.
-- **Status Tracking** – Provide real-time updates.
-- **Document Management** – Securely store and retrieve claim docs.
+- AI damage assessment model training
+- Fraud detection patterns
+- Repair cost prediction
 
-### 📊 Analytics & Reporting
+### 📱 Mobile Optimization
 
-- **User Behavior Tracking** – Deep dive into user actions using PostHog.
-- **Conversion Analytics** – Measure what’s working and iterate fast.
-- **Performance Dashboards** – Build real-time dashboards; integrate data from Sentry and OpenReplay.
+- Offline-first architecture
+- 2G network support
+- Data usage optimization
 
 ---
 
-_Top OSS Tools Driving Our Flow:_
+_Tech Stack Focus:_
 
-- **Sentry:** Real-time error logging and performance monitoring.
-- **Airbyte:** Data sync made simple.
-- **PostHog:** Feature flags and behavioral analytics.
-- **OpenReplay:** Session replay to watch users in action.
+- **Sentry:** Prioritize payment and claims flow monitoring
+- **PostHog:** Track SACCO onboarding conversion
+- **OpenReplay:** Monitor USSD session completion
+- **Airbyte:** SACCO data synchronization
 
-Let's build a platform that not only turns heads but also delivers an unmatched user experience from day one. **Masaa ni pesa, mzee—let's get to it!** ⚡
+**Key Metrics for Success:**
+
+- SACCO onboarding time < 24 hours
+- Claims processing time < 24 hours
+- USSD quote generation < 2 minutes
+- Bulk vehicle registration < 5 minutes for 50 vehicles

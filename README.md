@@ -1,13 +1,17 @@
 # BimaBazaar Kenya: Matatu Insurance, Simplified. Digital. Instant.
 
-If a matatu owner spends days comparing third-party cover, we’ve failed. If a driver loses earnings waiting for accident claims, we’ve failed.
-If a SACCO struggles to manage 100+ PSV policies manually, we’ve failed. The insurance industry for matatus is broken—rigid pricing, opaque comparisons, claims stuck in paperwork. We’re here to change that
+A matatu is off the road for three days because of insurance paperwork. That's KES. 12,000+ in lost revenue. A SACCO manager stays up until 2 AM juggling renewals for 200 vehicles. Drivers waste precious hours hunting for the best coverage while their families wait for dinner. This isn't just inefficiency – it's money being burned, families going hungry, and Kenyans missing work. The matatu insurance system isn't just broken. It's actively harming the backbone of our transport economy. We're not here to fix it. We're here to rebuild it from the ground up.
+
+If a matatu owner spends days comparing third-party cover, we’ve failed. If a driver loses earnings waiting for claims, we’ve failed. The insurance industry for matatus is broken—rigid pricing, opaque comparisons, claims stuck in paperwork. We’re here to change that
 
 ## **The BimaBazaar Promise**
 
 🚌 **Compare PSV Policies in 5 Minutes** – No broker visits, no hidden terms.
+
 📱 **Buy & Activate Instantly** – Pay via M-Pesa, get your policy via WhatsApp/SMS.
+
 ⚡ **Faster Claims, Less Downtime** – Upload accident photos, track payout status in real time.
+
 🤖 **Swahili-Speaking AI Assistant** – “Nataka bima ya matatu ya third-party” → gets you covered.
 
 <!-- 🔄 **Compare Policies in Minutes** – No more endless office visits.
@@ -77,9 +81,12 @@ Your one-stop shop for insurance: **Health, Motor, Life, Travel, SME, Crop, and 
 
 ## **Tech That Works for Kenya**
 
-✅ **USSD Backbone + WhatsApp Hybrid** – Dial `*483#` for no-internet access.  
-✅ **M-Pesa Hook & Batch Payments** – Instant, automated settlements & (Collect premiums from 100 drivers at once).  
-✅ **Swahili NLP Chatbot** – Understands “Nataka bima ya boda” smoothly.  
+✅ **USSD Backbone + WhatsApp Hybrid** – Dial `*483#` for no-internet access.
+
+✅ **M-Pesa Hook & Batch Payments** – Instant, automated settlements & (Collect premiums from 100 drivers at once).
+
+✅ **Swahili NLP Chatbot** – Understands “Nataka bima ya boda” smoothly.
+
 ✅ **Offline-First Approach** – Works on 2G networks, saves data bundles.
 
 ## **Roadmap: What’s Next?**
@@ -90,15 +97,21 @@ Your one-stop shop for insurance: **Health, Motor, Life, Travel, SME, Crop, and 
 🟢 **Q2 2025** – Gamified “Insurance 101” via TikTok challenges. -->
 
 🟢 **Q1 2025** – Launch “Pay-As-You-Drive” micro-policies (Sh200/day, inclusive of crew injury).
+
 🟢 **Q1 2025** – Partner with 3 major SACCOs to cover 10,000+ matatus.
+
 🟢 **Q2 2025** – AI Accident Detective – geolocate nearby witnesses via SMS for faster claims.
+
 🟢 **Q2 2025** – Gamified safety training – drivers earn premium discounts via TikTok quizzes.
+
 🟢 **Q3 2025** - POS embedded finance for B2B Partners
 
 ## **Why BimaBazaar Kenya Wins**
 
 ✅ **For Drivers** – Compare, buy, manage, and switch insurers while waiting for passengers.
+
 ✅ **For SACCOs** – Slash admin costs by 70% with digital fleet management.
+
 ✅ **For Insurers** – Tap into Sh20B matatu market with zero legacy tech debt.
 
 <!--
@@ -114,7 +127,11 @@ _Proudly compliant with IRA Kenya. Built in Nairobi, for Africa._
 ### **Tech Stack**
 
 🛠 **Next.js + TypeScript** – SACCO dashboards
+
 📱 **React Native** – Driver app (Android-first, 10MB size)
+
 📡 **Stax + Africa’s Talking + Novu** – USSD/SMS backbone
+
 🤖 **Swahili NLP Model** – Fine-tuned for matatu lingo (QavaBot)
+
 💰 **M-Pesa APIs + Stellar** – Instant bulk settlements
