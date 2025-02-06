@@ -1,4 +1,4 @@
-# Policybizaar Kenya: Insurance, Simplified. Digital. Instant.
+# BimaBazaar Kenya: Insurance, Simplified. Digital. Instant.
 
 If a mama mboga in Kawangware must close her stall to chase insurance paperwork, we’ve failed.  
 If a matatu owner spends days comparing third-party cover, we’ve failed.  
@@ -8,7 +8,7 @@ If a tech-savvy Gen Z in Nairobi can’t buy life insurance on their phone durin
 The insurance industry in East Africa is broken—manual, fragmented, and outdated. **Paperwork dominates. Comparison is difficult. Claims take forever.**  
 We’re here to change that.
 
-## **The Policybizaar Promise**
+## **The BimaBazaar Promise**
 
 🔄 **Compare Policies in Minutes** – No more endless office visits.  
 📱 **Buy Insurance Instantly** – Pay via M-Pesa, get your policy via WhatsApp/SMS.  
@@ -51,7 +51,7 @@ Your one-stop shop for insurance: **Health, Motor, Life, Travel, SME, Crop, and 
 🟢 **Q1 2025** – AI Claims Assistant—snap an accident pic, get instant assessment.  
 🟢 **Q2 2025** – Gamified “Insurance 101” via TikTok challenges.
 
-## **Why Policybizaar Kenya Wins**
+## **Why BimaBazaar Kenya Wins**
 
 ✅ **For Customers** – Compare, buy, and manage insurance like M-Pesa.  
 ✅ **For Agents** – Less paperwork, more sales.  
