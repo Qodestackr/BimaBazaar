@@ -146,7 +146,7 @@ export default function MatutuInsuranceComparison() {
 
 				<div className="mt-4 flex justify-center items-center">
 					<Dialog>
-						<DialogTrigger>
+						<DialogTrigger asChild>
 							<Button className="w-full bg-green-200 text-gray-800 hover:bg-green-400">
 								<MessageCircle className="mr-2 h-4 w-4" />
 								Ask a Question
