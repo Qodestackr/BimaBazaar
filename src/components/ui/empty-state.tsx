@@ -1,6 +1,6 @@
-import { BoxIcon } from "lucide-react";
-import Link from "next/link";
-import type { ReactNode } from "react";
+import { BoxIcon } from 'lucide-react';
+import Link from 'next/link';
+import type { ReactNode } from 'react';
 
 interface EmptyStateProps {
 	/** Title for the empty state */
@@ -42,7 +42,7 @@ export default function EmptyState({
 	actionHref,
 	secondaryAction,
 	icon = <BoxIcon className="w-10 h-10 text-gray-500" />,
-	className = "",
+	className = '',
 }: EmptyStateProps) {
 	return (
 		<div className={`flex flex-col items-center text-center py-6 space-y-3 ${className}`}>

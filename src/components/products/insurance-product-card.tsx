@@ -1,8 +1,9 @@
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import type { InsuranceProductCardProps } from "@/types/insurance";
-import { Star } from "lucide-react";
+import type { InsuranceProductCardProps } from '@/types/insurance';
+import { Star } from 'lucide-react';
+
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 
 export function InsuranceProductCard({ product }: InsuranceProductCardProps) {
 	return (
@@ -31,7 +32,7 @@ export function InsuranceProductCard({ product }: InsuranceProductCardProps) {
 				</div>
 				<ul className="space-y-2">
 					{product.features.map((feature, index) => (
-						<li key={index} className="text-sm flex items-start">
+						<li key={`${product.id}-${index}`} className="text-sm flex items-start">
 							<span className="mr-2 text-green-500">✓</span>
 							{feature}
 						</li>

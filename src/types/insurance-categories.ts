@@ -5,12 +5,12 @@ export interface InsuranceCategory {
 	icon: string;
 	offer?: {
 		text: string;
-		type: "discount" | "feature" | "new" | "premium";
+		type: 'discount' | 'feature' | 'new' | 'premium';
 	};
 	href: string;
 }
 
 export interface InsuranceCategoryListProps {
 	categories: InsuranceCategory[];
-	layout?: "grid" | "list";
+	layout?: 'grid' | 'list';
 }
