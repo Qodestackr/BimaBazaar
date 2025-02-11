@@ -1,6 +1,7 @@
 import { BoxIcon } from 'lucide-react';
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { Card, CardContent } from './card';
 
 interface EmptyStateProps {
 	/** Title for the empty state */
@@ -45,21 +46,23 @@ export default function EmptyState({
 	className = '',
 }: EmptyStateProps) {
 	return (
-		<div className={`flex flex-col items-center text-center py-6 space-y-3 ${className}`}>
+		<Card className={`flex flex-col items-center text-center py-4 space-y-3 ${className}`}>
 			{icon !== null && <div>{icon}</div>}
 			<h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{title}</h2>
 			<p className="text-sm text-muted-foreground max-w-md">{description}</p>
-			<div className="flex space-x-2">
-				{actionHref && actionText && (
-					<Link
-						href={actionHref}
-						className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow-md hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2"
-					>
-						{actionText}
-					</Link>
-				)}
-				{secondaryAction && secondaryAction}
-			</div>
-		</div>
+			<CardContent>
+				<div className="flex space-x-2">
+					{actionHref && actionText && (
+						<Link
+							href={actionHref}
+							className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow-md hover:bg-primary/90 focus:ring-2 focus:ring-primary focus:ring-offset-2"
+						>
+							{actionText}
+						</Link>
+					)}
+					{secondaryAction && secondaryAction}
+				</div>
+			</CardContent>
+		</Card>
 	);
 }

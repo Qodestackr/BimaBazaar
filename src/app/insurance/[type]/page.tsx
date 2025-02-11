@@ -6,8 +6,8 @@ import React from 'react';
 export default function page() {
 	return (
 		<div className="max-w-5xl mx-auto mt-10">
-			{sampleProducts.length > 0 ? (
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+			{sampleProducts.length ? (
+				<div className="mx-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
 					{sampleProducts.map((product) => (
 						<InsuranceProductCard key={product.id} product={product} />
 					))}

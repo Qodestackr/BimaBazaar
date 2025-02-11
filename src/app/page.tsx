@@ -1,26 +1,60 @@
-import ComparePlansPage from '@/components/compare-plans/ai/PlansPage';
-import { InsuranceCategoryList } from '@/components/products/insurance-category-list';
-import { insuranceCategories } from '@/data/insurance-categories';
+"use client"
 
-export default function Home() {
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+// import { FeatureCards } from "@/components/feature-cards"
+import { QuickQuote } from "@/components/quotes/quick-quote"
+import { BottomNav } from "@/components/layouts/bottom-nav"
+import { HeroSection } from "@/components/layouts/hero-section"
+
+export default function LandingPage() {
+	const [currentSection, setCurrentSection] = useState("home")
+
 	return (
-		<>
-			{/* ***FEATURE 001*** => 
-      If a user clicks "Auto Insurance," they land on /auto-insurance, 
-      and you use ProductGrid to list all auto insurance products. */}
-			<main className="container mx-auto py-8">
-				{/* ***FEATURE 002 *** */}
-				<div className="max-w-4xl mx-auto">
-					<h1 className="text-xl font-light mb-2">Insurance Products</h1>
-					<p className="text-muted-foreground mb-4 text-sm">
-						Find the perfect coverage for your needs
-					</p>
-					<InsuranceCategoryList categories={insuranceCategories} />
-				</div>
-
-				{/* *** FEATURE 003 *** */}
-				<ComparePlansPage />
+		<div>
+			<main className="pb-12">
+				{" "}
+				{/* padding to account for bottom nav */}
+				<AnimatePresence mode="wait">
+					{currentSection === "home" && (
+						<motion.div
+							key="home"
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							exit={{ opacity: 0, y: -20 }}
+							transition={{ duration: 0.3 }}
+						>
+							<HeroSection />
+							{/* <FeatureCards /> */}
+							<QuickQuote />
+						</motion.div>
+					)}
+					{currentSection === "search" && <SearchSection />}
+					{currentSection === "profile" && <ProfileSection />}
+				</AnimatePresence>
 			</main>
-		</>
-	);
+
+			<BottomNav currentSection={currentSection} setCurrentSection={setCurrentSection} />
+		</div>
+	)
+}
+
+function SearchSection() {
+	return (
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="p-4">
+			<h2 className="text-xl font-semibold mb-4">Search Policies</h2>
+			{/* Add search functionality here */}
+		</motion.div>
+	)
+}
+
+function ProfileSection() {
+	return (
+		<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="p-4">
+			<h2 className="text-xl font-semibold mb-4">Your Profile</h2>
+			{/* Add profile information here */}
+		</motion.div>
+	)
 }
