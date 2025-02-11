@@ -58,8 +58,9 @@ export default function MatutuInsuranceComparison() {
 					{samplePlans.map((plan) => (
 						<Card
 							key={plan.id}
-							className={`cursor-pointer transition-all duration-300 ${selectedPlans.some((p) => p.id === plan.id) ? 'border-blue-500 shadow-md' : ''
-								}`}
+							className={`cursor-pointer transition-all duration-300 ${
+								selectedPlans.some((p) => p.id === plan.id) ? 'border-blue-500 shadow-md' : ''
+							}`}
 							onClick={() => togglePlanSelection(plan)}
 						>
 							<CardContent className="p-3 flex justify-between items-center">
@@ -72,10 +73,11 @@ export default function MatutuInsuranceComparison() {
 									<p className="font-bold text-gray-800">KES {plan.monthlyPremium}/mo</p>
 									<Badge
 										variant={plan.suitability > 0.8 ? 'default' : 'secondary'}
-										className={`mt-1 ${plan.suitability > 0.8
-											? 'bg-green-100 text-green-800'
-											: 'bg-blue-100 text-blue-800'
-											}`}
+										className={`mt-1 ${
+											plan.suitability > 0.8
+												? 'bg-green-100 text-green-800'
+												: 'bg-blue-100 text-blue-800'
+										}`}
 									>
 										{plan.suitability > 0.8
 											? 'Best Fit'

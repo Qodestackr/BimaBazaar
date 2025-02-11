@@ -1,13 +1,13 @@
 'use client';
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
-import { Star, CheckCircle } from 'lucide-react';
-import { InsuranceProductCardProps } from '@/types/insurance';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import type { InsuranceProductCardProps } from '@/types/insurance';
+import { motion } from 'framer-motion';
+import { CheckCircle, Star } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export function InsuranceProductCard({ product }: InsuranceProductCardProps) {
 	return (
@@ -25,7 +25,9 @@ export function InsuranceProductCard({ product }: InsuranceProductCardProps) {
 						<h3 className="text-sm font-semibold text-gray-800">{product.name}</h3>
 						<p className="text-xs text-gray-500">{product.provider}</p>
 					</div>
-					<Badge variant="secondary" className="text-xs">{product.coverAmount}</Badge>
+					<Badge variant="secondary" className="text-xs">
+						{product.coverAmount}
+					</Badge>
 				</CardHeader>
 
 				{/* Pricing & Rating */}
