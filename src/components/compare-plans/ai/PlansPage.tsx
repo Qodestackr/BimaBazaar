@@ -1,24 +1,15 @@
 'use client';
 
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-	DialogTrigger,
-} from '@/components/ui/dialog';
 import { samplePlans } from '@/data/insurance-plans';
 import type { InsurancePlan } from '@/types/compare-plans';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Check, MessageCircle, Send, ThumbsUp, Users, X } from 'lucide-react';
+import { Check, ThumbsUp, Users, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
+import { AIProductChat } from '@/components/chat/ai-product-chat';
 import Rating from '@/components/common/rating';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import { PulsatingButton } from '@/components/ui/pulsating-button';
 import { TooltipProvider } from '@/components/ui/tooltip';
 
@@ -145,46 +136,7 @@ export default function MatutuInsuranceComparison() {
 						<p className="text-sm text-gray-600">Helped over 1000 drivers this week</p>
 					</div>
 				</div>
-
-				<div className="mt-4 flex justify-center items-center">
-					<Dialog>
-						<DialogTrigger asChild>
-							<Button className="w-full bg-green-200 text-gray-800 hover:bg-green-400">
-								<MessageCircle className="mr-2 h-4 w-4" />
-								Ask a Question
-							</Button>
-						</DialogTrigger>
-						<DialogContent>
-							<DialogHeader>
-								<DialogTitle>Ask a Question</DialogTitle>
-								<DialogDescription>
-									Ask a Question an instant question from select products
-								</DialogDescription>
-							</DialogHeader>
-							<Card className="mt-4">
-								<CardContent className="p-4">
-									<div className="h-16 overflow-y-auto mb-3 text-xs bg-gray-50 p-2 rounded">
-										<p className="text-sm text-gray-600">
-											Welcome! Ask instant question about select insurance products.
-										</p>
-									</div>
-									<form onSubmit={handleChatSubmit} className="flex">
-										<Input
-											type="text"
-											placeholder="Type your question here..."
-											value={chatMessage}
-											onChange={(e) => setChatMessage(e.target.value)}
-											className="flex-grow mr-2 h-9"
-										/>
-										<Button type="submit" className="h-8" size="sm">
-											<Send className="h-4 w-4" />
-										</Button>
-									</form>
-								</CardContent>
-							</Card>
-						</DialogContent>
-					</Dialog>
-				</div>
+				<AIProductChat selectedPlans={[]} />
 			</div>
 		</TooltipProvider>
 	);

@@ -157,7 +157,8 @@ export function QuickQuote() {
 								</Button>
 								<Button
 									variant="outline"
-									className="flex-1"
+									className="flex-1 h-8 text-xs"
+									size="sm"
 									onClick={() => router.push('/policies')}
 								>
 									<ThumbsUp className="w-4 h-4 mr-2" />

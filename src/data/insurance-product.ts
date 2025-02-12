@@ -4,7 +4,7 @@ export const sampleProducts: InsuranceProduct[] = [
 	{
 		id: '1',
 		name: 'Matatu Comprehensive Cover',
-		provider: 'BimaMatatu Assurance',
+		provider: 'Old Mutual',
 		coverAmount: '10M',
 		monthlyPremium: 5500,
 		rating: 4.8,
@@ -19,7 +19,7 @@ export const sampleProducts: InsuranceProduct[] = [
 	{
 		id: '2',
 		name: 'Pay-As-You-Drive Matatu Cover',
-		provider: 'KilometerShield Insurance',
+		provider: 'Jubilee',
 		coverAmount: '7M',
 		monthlyPremium: 4500,
 		rating: 4.6,
@@ -34,7 +34,7 @@ export const sampleProducts: InsuranceProduct[] = [
 	{
 		id: '3',
 		name: 'SACCO Fleet Cover',
-		provider: 'MatatuSACCO Insurance',
+		provider: 'APA',
 		coverAmount: '50M (Fleet)',
 		monthlyPremium: 4000,
 		rating: 4.7,
@@ -64,7 +64,7 @@ export const sampleProducts: InsuranceProduct[] = [
 	{
 		id: '5',
 		name: 'Matatu Fire & Theft Cover',
-		provider: 'Jirani Bima',
+		provider: 'Britam',
 		coverAmount: '8M',
 		monthlyPremium: 3200,
 		rating: 4.5,

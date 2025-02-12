@@ -17,7 +17,7 @@ export function HeroSection() {
 		<WarpBackground
 			className="min-h-[90vh] p-0 border-none bg-black"
 			perspective={150}
-			beamsPerSide={5}
+			beamsPerSide={4}
 			beamSize={1}
 			beamDuration={5}
 			beamDelayMax={2}
@@ -101,12 +101,15 @@ export function HeroSection() {
 						<p className="text-xs">Matatu Covered</p>
 						<p className="text-2xl font-bold">1,200+</p>
 					</Card>
-					<ToonMatatu />
 					<Card className="bg-black/50 text-white border-none p-3">
 						<p className="text-xs">Claims Processed</p>
 						<p className="text-2xl font-bold">500+</p>
 					</Card>
 				</motion.div>
+			</div>
+
+			<div className="flex mx-auto mt-20 justify-center items-center">
+				<ToonMatatu />
 			</div>
 		</WarpBackground>
 	);

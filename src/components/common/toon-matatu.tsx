@@ -50,7 +50,7 @@ export function ToonMatatu() {
 					ease: 'easeInOut',
 				}}
 			>
-				<Image src="/colorful-matatu.jpg" alt="Toonified Matatu" width={80} height={40} />
+				<Image src="/matatu-giphy.gif" alt="Toonified Matatu" width={200} height={60} />
 			</motion.div>
 		</motion.div>
 	);
