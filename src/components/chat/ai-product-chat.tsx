@@ -89,14 +89,8 @@ export function AIProductChat({ selectedPlans }: AIProductChatProps) {
 							exit={{ opacity: 0, y: 50 }}
 							transition={{ duration: 0.3 }}
 						>
-							<Card className="w-80 sm:w-96 h-96 flex flex-col">
-								<CardContent className="flex flex-col h-full p-4">
-									<div className="flex justify-between items-center mb-4">
-										<h3 className="font-semibold text-lg">Matatu Insurance Assistant</h3>
-										<Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-											<X className="h-4 w-4" />
-										</Button>
-									</div>
+							<div className="flex flex-col">
+								<div className="flex flex-col h-full p-2">
 									<div className="flex-grow overflow-y-auto mb-4 space-y-4">
 										{messages.map((message) => (
 											<div
@@ -104,11 +98,10 @@ export function AIProductChat({ selectedPlans }: AIProductChatProps) {
 												className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
 											>
 												<div
-													className={`max-w-[75%] rounded-lg p-2 ${
-														message.sender === 'user'
-															? 'bg-blue-500 text-white'
-															: 'bg-gray-200 text-gray-800'
-													}`}
+													className={`max-w-[75%] rounded-lg p-2 ${message.sender === 'user'
+														? 'bg-blue-500 text-white'
+														: 'bg-gray-200 text-gray-800'
+														}`}
 												>
 													{message.text}
 												</div>
@@ -128,8 +121,8 @@ export function AIProductChat({ selectedPlans }: AIProductChatProps) {
 											<Send className="h-4 w-4" />
 										</Button>
 									</form>
-								</CardContent>
-							</Card>
+								</div>
+							</div>
 						</motion.div>
 					</AnimatePresence>
 				</DialogContent>

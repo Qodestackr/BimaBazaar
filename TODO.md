@@ -1,3 +1,12 @@
+<!--
+CODE QUALITY:
+- Shell page.tsx to server component
+- Refactor Types, Forms, Zod Schemas, Components
+
+[TIME: 8HRS]
+[WHEN: SATURDAY]
+-->
+
 # BimaBazaar Matatu Sprint Plan
 
 ## Current Sprint (2 Weeks)
