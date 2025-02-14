@@ -14,6 +14,7 @@ import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MapPin, MessageSquare, Phone, Send } from 'lucide-react';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function ContactPage() {
@@ -78,6 +79,11 @@ export default function ContactPage() {
 											</div>
 										</div>
 									</RadioGroup>
+									<div>
+										<Link className="mt-3 text-blue-400" href={'/dashboard/policyholder/support'}>
+											Chat With Bazaar
+										</Link>
+									</div>
 								</div>
 								{/*  */}
 							</div>

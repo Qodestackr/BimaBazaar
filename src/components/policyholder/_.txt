@@ -1,0 +1,156 @@
+
+"use client"
+
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
+import { cn } from "@/lib/utils"
+import { Shield, Calendar, AlertCircle, ChevronDown, FileText, CreditCard } from "lucide-react"
+
+interface InsuranceDetails {
+	policyNumber: string
+	type: string
+	status: "active" | "expiring" | "expired"
+	startDate: string
+	endDate: string
+	coverageAmount: number
+	premiumPaid: number
+	premiumTotal: number
+	nextPaymentDate: string
+	nextPaymentAmount: number
+}
+
+const insuranceDetails: InsuranceDetails = {
+	policyNumber: "POL-12345",
+	type: "Comprehensive",
+	status: "active",
+	startDate: "2024-01-01",
+	endDate: "2024-12-31",
+	coverageAmount: 1000000,
+	premiumPaid: 75000,
+	premiumTotal: 100000,
+	nextPaymentDate: "2024-06-01",
+	nextPaymentAmount: 25000,
+}
+
+export function InsuranceDetails() {
+	const [isExpanded, setIsExpanded] = useState(false)
+	const premiumProgress = (insuranceDetails.premiumPaid / insuranceDetails.premiumTotal) * 100
+
+	const statusColors = {
+		active: "bg-emerald-500",
+		expiring: "bg-amber-500",
+		expired: "bg-rose-500",
+	}
+
+	return (
+		<div className="space-y-4">
+			<Card>
+				<CardHeader className="pb-2">
+					<div className="flex items-center justify-between">
+						<div className="flex items-center gap-2">
+							<Shield className="w-5 h-5 text-primary" />
+							<CardTitle className="text-lg font-semibold">Insurance Policy</CardTitle>
+						</div>
+						<Badge variant="outline" className={cn("text-xs", statusColors[insuranceDetails.status])}>
+							{insuranceDetails.status}
+						</Badge>
+					</div>
+				</CardHeader>
+				<CardContent>
+					<div className="space-y-4">
+						<div>
+							<p className="text-sm text-muted-foreground">Policy Number</p>
+							<p className="font-medium">{insuranceDetails.policyNumber}</p>
+						</div>
+						<div className="space-y-2">
+							<div className="flex justify-between text-sm">
+								<span className="text-muted-foreground">Premium Payment</span>
+								<span>{premiumProgress.toFixed(0)}% Paid</span>
+							</div>
+							<Progress value={premiumProgress} className="h-2" />
+							<div className="flex justify-between text-xs text-muted-foreground">
+								<span>KSh {insuranceDetails.premiumPaid.toLocaleString()} paid</span>
+								<span>KSh {insuranceDetails.premiumTotal.toLocaleString()} total</span>
+							</div>
+						</div>
+						<div className="bg-muted p-3 rounded-lg">
+							<div className="flex justify-between items-center mb-2">
+								<span className="text-sm font-medium">Next Payment</span>
+								<Badge variant="outline" className="text-xs">
+									{insuranceDetails.nextPaymentDate}
+								</Badge>
+							</div>
+							<div className="flex justify-between items-center">
+								<span className="text-lg font-bold">KSh {insuranceDetails.nextPaymentAmount.toLocaleString()}</span>
+								<Button size="sm" className="h-7 text-xs">
+									<CreditCard className="w-3 h-3 mr-1" />
+									Pay Now
+								</Button>
+							</div>
+						</div>
+					</div>
+				</CardContent>
+			</Card>
+
+			<Card>
+				<CardHeader className="cursor-pointer" onClick={() => setIsExpanded(!isExpanded)}>
+					<div className="flex items-center justify-between">
+						<div className="flex items-center gap-2">
+							<FileText className="w-5 h-5" />
+							<CardTitle className="text-lg font-semibold">Policy Details</CardTitle>
+						</div>
+						<ChevronDown className={cn("w-5 h-5 transition-transform", isExpanded && "rotate-180")} />
+					</div>
+				</CardHeader>
+				<AnimatePresence>
+					{isExpanded && (
+						<motion.div
+							initial={{ height: 0, opacity: 0 }}
+							animate={{ height: "auto", opacity: 1 }}
+							exit={{ height: 0, opacity: 0 }}
+							transition={{ duration: 0.2 }}
+						>
+							<CardContent className="pt-0 grid gap-4">
+								<div className="grid grid-cols-2 gap-4">
+									<div>
+										<p className="text-sm text-muted-foreground">Start Date</p>
+										<div className="flex items-center gap-2 mt-1">
+											<Calendar className="w-4 h-4" />
+											<span className="text-sm">{insuranceDetails.startDate}</span>
+										</div>
+									</div>
+									<div>
+										<p className="text-sm text-muted-foreground">End Date</p>
+										<div className="flex items-center gap-2 mt-1">
+											<Calendar className="w-4 h-4" />
+											<span className="text-sm">{insuranceDetails.endDate}</span>
+										</div>
+									</div>
+								</div>
+								<div>
+									<p className="text-sm text-muted-foreground mb-1">Coverage Amount</p>
+									<p className="text-lg font-bold">KSh {insuranceDetails.coverageAmount.toLocaleString()}</p>
+								</div>
+								<div className="flex gap-2">
+									<Button variant="outline" size="sm" className="flex-1">
+										<FileText className="w-4 h-4 mr-2" />
+										View Policy
+									</Button>
+									<Button variant="outline" size="sm" className="flex-1">
+										<AlertCircle className="w-4 h-4 mr-2" />
+										File Claim
+									</Button>
+								</div>
+							</CardContent>
+						</motion.div>
+					)}
+				</AnimatePresence>
+			</Card>
+		</div>
+	)
+}
+--------------------------------

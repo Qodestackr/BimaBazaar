@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 function AdminDash() {
-    return (
-        <div>AdminDash</div>
-    )
+	return <div>AdminDash</div>;
 }
 
-export default AdminDash
+export default AdminDash;

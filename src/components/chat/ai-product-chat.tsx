@@ -98,10 +98,11 @@ export function AIProductChat({ selectedPlans }: AIProductChatProps) {
 												className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
 											>
 												<div
-													className={`max-w-[75%] rounded-lg p-2 ${message.sender === 'user'
-														? 'bg-blue-500 text-white'
-														: 'bg-gray-200 text-gray-800'
-														}`}
+													className={`max-w-[75%] rounded-lg p-2 ${
+														message.sender === 'user'
+															? 'bg-blue-500 text-white'
+															: 'bg-gray-200 text-gray-800'
+													}`}
 												>
 													{message.text}
 												</div>
