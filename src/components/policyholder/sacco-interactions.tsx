@@ -29,6 +29,8 @@ import {
 	XCircle,
 } from 'lucide-react';
 import { useState } from 'react';
+import { LoanApplication } from '../loans/loan-application';
+import { LoanHistory } from '../loans/loan-history';
 
 interface SACCODetails {
 	name: string;
@@ -73,7 +75,7 @@ export function SACCOInteractions() {
 	const [contributionAmount, setContributionAmount] = useState(saccoDetails.contributionAmount);
 	const [loanAmount, setLoanAmount] = useState(100000);
 	const [loanTerm, setLoanTerm] = useState(12);
-	const [loanApprovalChance, setLoanApprovalChance] = useState(0);
+	const [loanApprovalChance, setLoanApprovalChance] = useState(90);
 	const savingsProgress = (saccoDetails.totalSavings / saccoDetails.targetSavings) * 100;
 
 	const handleContribution = async () => {
@@ -255,8 +257,9 @@ export function SACCOInteractions() {
 												</tbody>
 											</table>
 										</ScrollArea>
-										<div className="mt-4 p-4 bg-muted rounded-md">
-											<h4 className="font-semibold mb-2">AI Savings Insight</h4>
+										<div className="mt-2 p-3 bg-muted rounded-md">
+											{/* Richer Texts to stand out... */}
+											<h4 className="font-semibold mb-2">Savings Insight</h4>
 											<p className="text-sm text-muted-foreground">{aiSavingsInsight()}</p>
 										</div>
 									</DialogContent>
@@ -318,15 +321,9 @@ export function SACCOInteractions() {
 											{loanApprovalChance.toFixed(0)}% chance of approval
 										</span>
 									</div>
-									<Button className="w-full" disabled={loanApprovalChance < 70}>
-										<TrendingUp className="w-4 h-4 mr-2" />
-										Apply for Loan
-									</Button>
+									{loanApprovalChance > 70 && <LoanApplication availableLoanAmount={10000} />}
 								</div>
-								<Button variant="outline" className="w-full">
-									<Calendar className="w-4 h-4 mr-2" />
-									View Loan History
-								</Button>
+								<LoanHistory />
 							</TabsContent>
 						</motion.div>
 					</AnimatePresence>
