@@ -29,7 +29,7 @@ export function PaymentsManagement() {
 	);
 
 	return (
-		<div className="w-full max-w-md mx-auto bg-white dark:bg-zinc-900/70 border border-zinc-100 dark:border-zinc-800 rounded-xl shadow-sm backdrop-blur-xl">
+		<div className="w-full my-10 max-w-md mx-auto bg-white dark:bg-zinc-900/70 border border-zinc-100 dark:border-zinc-800 rounded-xl shadow-sm backdrop-blur-xl">
 			<div className="p-4 border-b border-zinc-100 dark:border-zinc-800 flex justify-between items-center">
 				<div>
 					<p className="text-xs text-zinc-600 dark:text-zinc-400">Total Balance</p>

@@ -1,11 +1,12 @@
 import { DashboardShell } from '@/components/sacco/dashboard-shell';
+import { FinanceDashboard } from '@/components/sacco/finance-dashboard';
 import { PaymentsManagement } from '@/components/sacco/payments-management';
 
 export default function PaymentsPage() {
 	return (
-		<DashboardShell>
-			<h1 className="text-2xl font-bold mb-4">Payments Management</h1>
+		<div className="max-w-3xl mx-auto mt-10">
 			<PaymentsManagement />
-		</DashboardShell>
+			<FinanceDashboard />
+		</div>
 	);
 }

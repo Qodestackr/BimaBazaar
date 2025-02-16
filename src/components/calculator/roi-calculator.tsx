@@ -12,6 +12,16 @@ import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxi
 
 type UserGroup = 'matatuOwner' | 'sacco' | 'underwriter';
 
+type CalculatedResults = {
+	annualSavings?: number;
+	totalSavings?: number;
+	totalBenefit?: number;
+	roi: number;
+	aiSummary: string;
+	chartData?: { name: string; value: number }[];
+	error?: string;
+};
+
 const userGroupData = {
 	matatuOwner: {
 		icon: Bus,
@@ -75,15 +85,15 @@ type InputConfig = (typeof userGroupData)[keyof typeof userGroupData]['inputs'][
 export function ROICalculator() {
 	const [selectedGroup, setSelectedGroup] = useState<UserGroup | null>(null);
 	const [inputData, setInputData] = useState<Record<string, number>>({});
-	const [results, setResults] = useState<any>(null);
+	const [results, setResults] = useState<CalculatedResults | null>(null);
 
 	useEffect(() => {
 		if (selectedGroup) {
 			const initialData = userGroupData[selectedGroup].inputs.reduce(
-				(acc, input) => ({
-					...acc,
-					[input.key]: Math.max(input.defaultValue, input.min || 0),
-				}),
+				(acc: Record<string, number>, input) => {
+					acc[input.key] = Math.max(input.defaultValue, input.min ?? 0);
+					return acc;
+				},
 				{},
 			);
 			setInputData(initialData);
@@ -104,7 +114,7 @@ export function ROICalculator() {
 		if (!selectedGroup) return;
 
 		try {
-			let calculatedResults;
+			let calculatedResults: CalculatedResults;
 			switch (selectedGroup) {
 				case 'matatuOwner': {
 					const {
